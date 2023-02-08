@@ -25,7 +25,7 @@ debug = [
 [project]
 name = "{{ cookiecutter.project_name }}"
 version = "{{ cookiecutter.version }}"
-description = "{{ cookiecutter.description }}"
+description = "{{ cookiecutter.project_short_description }}"
 authors = [
     {name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
 ]
