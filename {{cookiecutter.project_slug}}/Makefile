@@ -1,5 +1,4 @@
-.PHONY: clean clean-build clean-pyc clean-test coverage dist docs help install lint lint/flake8
-        lint/black
+.PHONY: clean clean-build clean-pyc clean-test coverage dist docs help install lint lint/flake8 lint/black
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -49,12 +48,22 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint/flake8: ## check style with flake8
-	flake8 {{ cookiecutter.project_slug }} tests
+	flake8 src tests
 
 lint/black: ## check style with black
-	black --check {{ cookiecutter.project_slug }} tests
+	black --check src tests
 
-lint: lint/flake8 lint/black ## check style
+lint/pylint: ## check style with pylint
+	pylint src tests
+
+lint/pycodestyle: ## check style with pycodestyle
+	pycodestyle src
+
+lint/pydocstyle: ## check style with pydocstyle
+	pydocstyle src
+
+
+lint: lint/flake8 lint/black lint/pycodestyle lint/pydocstyle lint/pylint ## check style
 
 test: ## run tests quickly with the default Python
 	pytest
@@ -71,7 +80,7 @@ coverage: ## check code coverage quickly with the default Python
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/{{ cookiecutter.project_slug }}.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ {{ cookiecutter.project_slug }}
+	sphinx-apidoc -o docs/ src/{{ cookiecutter.project_slug }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
