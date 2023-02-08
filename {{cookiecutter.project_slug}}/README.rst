@@ -1,43 +1,18 @@
-{% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
-{% for _ in cookiecutter.project_name %}={% endfor %}
-{{ cookiecutter.project_name }}
-{% for _ in cookiecutter.project_name %}={% endfor %}
+{{cookiecutter.project_name}}
+_________________
 
-{% if is_open_source %}
-.. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg
-        :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}
+[![PyPI version](https://badge.fury.io/py/{{cookiecutter.project_name}}.svg)](http://badge.fury.io/py/{{cookiecutter.project_name}})
+[![Test Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Test/badge.svg?branch=develop)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/actions?query=workflow%3ATest)
+[![Lint Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Lint/badge.svg?branch=develop)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/actions?query=workflow%3ALint)
+[![codecov](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/branch/main/graph/badge.svg)](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_name}})
+[![Join the chat at https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}](https://badges.gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}.svg)](https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/{{cookiecutter.project_name}}/)
+[![Downloads](https://pepy.tech/badge/{{cookiecutter.project_name}})](https://pepy.tech/project/{{cookiecutter.project_name}})
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://timothycrosley.github.io/isort/)
+_________________
 
-.. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.svg
-        :target: https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+[Read Latest Documentation](https://{{cookiecutter.github_username}}.github.io/{{cookiecutter.project_name}}/) - [Browse GitHub Code Repository](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/)
+_________________
 
-.. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest
-        :target: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-{%- endif %}
-
-{% if cookiecutter.add_pyup_badge == 'y' %}
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg
-     :target: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/
-     :alt: Updates
-{% endif %}
-
-
-{{ cookiecutter.project_short_description }}
-
-{% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
-* Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
-{% endif %}
-
-Features
---------
-
-* TODO
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+**{{cookiecutter.project_name}}** {{cookiecutter.description}}
