@@ -6,11 +6,11 @@
     :target: https://pypi.python.org/pypi/{{cookiecutter.project_name}}/
     :alt: PyPI
 
-.. image:: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Test/badge.svg?branch=develop
+.. image:: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Test/badge.svg?branch=main
     :target: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/actions?query=workflow%3ATest
     :alt: Test Status
 
-.. image:: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Lint/badge.svg?branch=develop
+.. image:: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Lint/badge.svg?branch=main
     :target: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/actions?query=workflow%3ALint
     :alt: Lint Status
 
